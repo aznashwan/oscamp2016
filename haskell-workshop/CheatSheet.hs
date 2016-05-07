@@ -80,7 +80,7 @@ someListHeadFunction _ = error "The list is empty!"
 -- reuse gains. Most straightforward example is the list length function:
 myLength :: [a] -> Int
 myLength [] = 0
-myLength (_, rest) = 1 + (length rest)
+myLength (head : rest) = 1 + (length rest)
 -- the reasoning is that we do not care at all what is in the list, that's why
 -- we use the TYPE VARIABLE 'a', which allows us to work over all lists
 -- regardless of what type of element is in it; but prevents us from making any
